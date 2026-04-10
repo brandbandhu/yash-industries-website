@@ -69,8 +69,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/20 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm opacity-60">Â© 2024 Yash Industries. All rights reserved.</p>
-          <p className="text-sm opacity-60">Street Light Pole Manufacturer in India</p>
+          <p className="text-sm opacity-60">Copyright ©2026 All Rights Reserved By Yash Industries Designed By Webakoof</p>
         </div>
       </div>
     </footer>
@@ -78,3 +77,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

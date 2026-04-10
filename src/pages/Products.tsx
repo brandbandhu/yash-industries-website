@@ -9,7 +9,7 @@ import homeConical from "@/assets/home products/Conical Pole.png";
 import homeDecorative from "@/assets/home products/Decorative light Pole.png";
 import homeHighmast from "@/assets/home products/High Mast Pole.png";
 import homeStreetlight from "@/assets/home products/Street Light Pole.png";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/breadcrunb.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -73,7 +73,7 @@ const Products = () => {
             {displayProducts.map((product, i) => (
               <motion.div key={product.id} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i} variants={fadeUp}>
                 <Link to={`/products/${product.slug}`} className="group block glass-card rounded-xl overflow-hidden hover-lift">
-                  <div className="h-72 md:h-80 overflow-hidden bg-gradient-to-b from-muted/40 via-muted/20 to-transparent p-0 flex items-center justify-center">
+                  <div className="h-72 md:h-80 overflow-hidden rounded-xl bg-gradient-to-b from-muted/40 via-muted/20 to-transparent p-0 flex items-center justify-center border-2 border-black/80">
                     <img src={product.image} alt={product.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
                   </div>
                   <div className="p-6">

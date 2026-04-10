@@ -8,7 +8,7 @@ import bannerImg3 from "@/assets/banner3.png";
 import bannerMobile1 from "@/assets/mobile banner/banner.png";
 import bannerMobile2 from "@/assets/mobile banner/banner 2.png";
 import bannerMobile3 from "@/assets/mobile banner/banner 3.png";
-import manufacturingImg from "@/assets/manufacturing.jpg";
+import manufacturingImg from "@/assets/about us.png";
 import productHighmast from "@/assets/product-highmast.jpg";
 import { products } from "@/data/products";
 import homeOctagonal from "@/assets/home products/octagonal pole.png";
@@ -172,7 +172,7 @@ const ProductCategories = () => {
           {homeProducts.map((product, i) => (
             <motion.div key={product.id} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i} variants={fadeUp}>
               <Link to={`/products/${product.slug}`} className="group block glass-card rounded-xl overflow-hidden hover-lift">
-                <div className="h-72 md:h-80 overflow-hidden bg-gradient-to-b from-muted/40 via-muted/20 to-transparent p-0 flex items-center justify-center">
+                <div className="h-72 md:h-80 overflow-hidden rounded-xl bg-gradient-to-b from-muted/40 via-muted/20 to-transparent p-0 flex items-center justify-center border-2 border-black/80">
                   <img src={product.image} alt={product.name} loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]" />
                 </div>
                 <div className="p-6">

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/breadcrunb.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

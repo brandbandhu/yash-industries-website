@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Target, Eye, Shield, Award, Users, Clock, ArrowRight } from "lucide-react";
-import manufacturingImg from "@/assets/manufacturing.jpg";
-import heroBg from "@/assets/hero-bg.jpg";
+import manufacturingImg from "@/assets/about us.png";
+import heroBg from "@/assets/breadcrunb.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -29,6 +29,7 @@ const About = () => (
           <Link to="/" className="hover:text-primary-foreground">Home</Link> / <span className="text-primary-foreground">About Us</span>
         </nav>
         <h1 className="text-4xl md:text-5xl font-heading font-black text-primary-foreground">About Us</h1>
+        <p className="text-primary-foreground/70 mt-3 max-w-xl">Learn more about our legacy, values, and manufacturing excellence.</p>
       </div>
     </section>
 

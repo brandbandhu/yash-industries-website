@@ -4,6 +4,11 @@ import { ArrowRight, CheckCircle, Send } from "lucide-react";
 import { products } from "@/data/products";
 import { useState } from "react";
 import { toast } from "sonner";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import oct1 from "@/assets/Octagonal Pole/1.png";
+import oct2 from "@/assets/Octagonal Pole/2.png";
+import oct3 from "@/assets/Octagonal Pole/3.png";
+import oct4 from "@/assets/Octagonal Pole/4.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -14,6 +19,10 @@ const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const product = products.find((p) => p.slug === slug);
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
+  const galleryMap: Record<string, string[]> = {
+    "octagonal-pole": [oct1, oct2, oct3, oct4],
+  };
+  const galleryImages = galleryMap[product?.slug ?? ""] ?? (product ? [product.image] : []);
 
   if (!product) {
     return (
@@ -44,14 +53,26 @@ const ProductDetail = () => {
 
       <section className="section-padding pt-8 bg-background">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Image */}
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="rounded-2xl overflow-hidden shadow-elevated">
-              <img src={product.image} alt={product.name} className="w-full h-full object-cover aspect-[4/3]" />
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+            {/* Image Carousel */}
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="h-full">
+              <Carousel opts={{ loop: true }} className="w-full h-full">
+                <CarouselContent className="ml-0">
+                  {galleryImages.map((img, index) => (
+                    <CarouselItem key={`${product.slug}-img-${index}`} className="pl-0">
+                      <div className="rounded-2xl overflow-hidden shadow-elevated h-full min-h-[340px] md:min-h-[460px]">
+                        <img src={img} alt={`${product.name} ${index + 1}`} className="w-full h-full object-cover" />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-3 top-1/2 -translate-y-1/2" />
+                <CarouselNext className="right-3 top-1/2 -translate-y-1/2" />
+              </Carousel>
             </motion.div>
 
             {/* Info */}
-            <motion.div initial="hidden" animate="visible">
+            <motion.div initial="hidden" animate="visible" className="h-full flex flex-col">
               <motion.span variants={fadeUp} custom={0} className="text-xs font-heading font-semibold text-secondary uppercase tracking-wider">{product.category}</motion.span>
               <motion.h1 variants={fadeUp} custom={1} className="text-3xl md:text-4xl font-heading font-black text-primary mt-2 mb-4">{product.name}</motion.h1>
               <motion.p variants={fadeUp} custom={2} className="text-muted-foreground leading-relaxed mb-6">{product.description}</motion.p>
