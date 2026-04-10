@@ -1,0 +1,163 @@
+import { useParams, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { ArrowRight, CheckCircle, Send } from "lucide-react";
+import { products } from "@/data/products";
+import { useState } from "react";
+import { toast } from "sonner";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.5 } }),
+};
+
+const ProductDetail = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const product = products.find((p) => p.slug === slug);
+  const [form, setForm] = useState({ name: "", phone: "", message: "" });
+
+  if (!product) {
+    return (
+      <div className="min-h-screen flex items-center justify-center pt-20">
+        <div className="text-center">
+          <h1 className="text-2xl font-heading font-bold text-primary mb-4">Product Not Found</h1>
+          <Link to="/products" className="text-secondary font-heading font-semibold">← Back to Products</Link>
+        </div>
+      </div>
+    );
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast.success("Inquiry submitted! We'll contact you shortly.");
+    setForm({ name: "", phone: "", message: "" });
+  };
+
+  return (
+    <>
+      <section className="pt-28 md:pt-32 pb-6 bg-background">
+        <div className="container-custom px-4 md:px-8">
+          <nav className="text-sm text-muted-foreground font-body">
+            <Link to="/" className="hover:text-primary">Home</Link> / <Link to="/products" className="hover:text-primary">Products</Link> / <span className="text-foreground">{product.name}</span>
+          </nav>
+        </div>
+      </section>
+
+      <section className="section-padding pt-8 bg-background">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Image */}
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="rounded-2xl overflow-hidden shadow-elevated">
+              <img src={product.image} alt={product.name} className="w-full h-full object-cover aspect-[4/3]" />
+            </motion.div>
+
+            {/* Info */}
+            <motion.div initial="hidden" animate="visible">
+              <motion.span variants={fadeUp} custom={0} className="text-xs font-heading font-semibold text-secondary uppercase tracking-wider">{product.category}</motion.span>
+              <motion.h1 variants={fadeUp} custom={1} className="text-3xl md:text-4xl font-heading font-black text-primary mt-2 mb-4">{product.name}</motion.h1>
+              <motion.p variants={fadeUp} custom={2} className="text-muted-foreground leading-relaxed mb-6">{product.description}</motion.p>
+
+              {/* Specs */}
+              <motion.div variants={fadeUp} custom={3} className="glass-card rounded-xl p-6 mb-6">
+                <h3 className="font-heading font-bold text-primary mb-4">Specifications</h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between text-sm border-b border-border pb-2">
+                    <span className="text-muted-foreground">Material</span>
+                    <span className="font-medium text-foreground">{product.material}</span>
+                  </div>
+                  <div className="flex justify-between text-sm border-b border-border pb-2">
+                    <span className="text-muted-foreground">Height Range</span>
+                    <span className="font-medium text-foreground">{product.height}</span>
+                  </div>
+                  <div className="flex justify-between text-sm border-b border-border pb-2">
+                    <span className="text-muted-foreground">Shape</span>
+                    <span className="font-medium text-foreground">{product.shape}</span>
+                  </div>
+                  <div className="flex justify-between text-sm border-b border-border pb-2">
+                    <span className="text-muted-foreground">Finish</span>
+                    <span className="font-medium text-foreground">{product.finish}</span>
+                  </div>
+                  {Object.entries(product.specifications).map(([key, val]) => (
+                    <div key={key} className="flex justify-between text-sm border-b border-border pb-2">
+                      <span className="text-muted-foreground">{key}</span>
+                      <span className="font-medium text-foreground">{val}</span>
+                    </div>
+                  ))}
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">MOQ</span>
+                    <span className="font-medium text-foreground">{product.moq}</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Applications */}
+              <motion.div variants={fadeUp} custom={4} className="mb-6">
+                <h3 className="font-heading font-bold text-primary mb-3">Applications</h3>
+                <div className="flex flex-wrap gap-2">
+                  {product.applications.map((a) => (
+                    <span key={a} className="text-xs font-heading font-semibold bg-muted text-muted-foreground px-3 py-1.5 rounded-full">{a}</span>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Customization */}
+              <motion.div variants={fadeUp} custom={5} className="mb-6">
+                <h3 className="font-heading font-bold text-primary mb-3">Customization Options</h3>
+                <ul className="space-y-2">
+                  {product.customization.map((c) => (
+                    <li key={c} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <CheckCircle className="w-4 h-4 text-secondary shrink-0" />
+                      {c}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              <motion.div variants={fadeUp} custom={6}>
+                <a href="#inquiry" className="inline-flex items-center gap-2 gradient-accent text-secondary-foreground font-heading font-bold px-8 py-3.5 rounded-lg hover:opacity-90 transition-opacity text-sm">
+                  Get Best Price <ArrowRight className="w-4 h-4" />
+                </a>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Inquiry Form */}
+          <motion.div id="inquiry" initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-16 max-w-2xl mx-auto">
+            <motion.h2 variants={fadeUp} custom={0} className="text-2xl font-heading font-black text-primary text-center mb-8">
+              Inquire About {product.name}
+            </motion.h2>
+            <motion.form variants={fadeUp} custom={1} onSubmit={handleSubmit} className="glass-card rounded-xl p-8 space-y-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                required
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                className="w-full px-4 py-3 rounded-lg border border-border bg-background font-body text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
+              />
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                required
+                value={form.phone}
+                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                className="w-full px-4 py-3 rounded-lg border border-border bg-background font-body text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
+              />
+              <textarea
+                placeholder="Your Message"
+                rows={4}
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                className="w-full px-4 py-3 rounded-lg border border-border bg-background font-body text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 resize-none"
+              />
+              <button type="submit" className="w-full gradient-accent text-secondary-foreground font-heading font-bold py-3.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+                <Send className="w-4 h-4" /> Submit Inquiry
+              </button>
+            </motion.form>
+          </motion.div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default ProductDetail;
