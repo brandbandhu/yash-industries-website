@@ -137,7 +137,17 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/20 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm opacity-60">Copyright © 2026 All Rights Reserved By Yash Industries Designed By Webakoof</p>
+          <p className="text-sm opacity-60">
+            Copyright © 2026 All Rights Reserved By Yash Industries Designed By{" "}
+            <a
+              href="https://webakoof.com/"
+              className="underline underline-offset-2 hover:opacity-100"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Webakoof
+            </a>
+          </p>
         </div>
       </div>
     </footer>
