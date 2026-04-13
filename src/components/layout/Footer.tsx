@@ -54,7 +54,13 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm opacity-80">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                <span>Industrial Area, Phase II, New Delhi, India</span>
+                <span>
+                  <span className="font-semibold text-primary-foreground">Reg. Office :</span>{" "}
+                  Renukai Niwas, Near Natyagraha, Canol Road Beed
+                  <br />
+                  <span className="font-semibold text-primary-foreground">Factory :</span>{" "}
+                  Plot No. 08, Survey No. 73, Charhata Road, Palwan, Tq. & Dist. Beed 0 431 122
+                </span>
               </li>
               <li className="flex items-center gap-3 text-sm opacity-80">
                 <Phone className="w-4 h-4 shrink-0" />

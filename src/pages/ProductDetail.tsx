@@ -5,10 +5,27 @@ import { products } from "@/data/products";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import oct1 from "@/assets/Octagonal Pole/1.png";
-import oct2 from "@/assets/Octagonal Pole/2.png";
-import oct3 from "@/assets/Octagonal Pole/3.png";
-import oct4 from "@/assets/Octagonal Pole/4.png";
+import oct1 from "@/assets/octogonal pole/Octagonal  Pole1.png";
+import oct2 from "@/assets/octogonal pole/Octagonal  Pole2.png";
+import oct3 from "@/assets/octogonal pole/Octagonal  Pole3.png";
+import oct4 from "@/assets/octogonal pole/Octagonal  Pole4.png";
+import highMast1 from "@/assets/High Mast Pole/High Mast Pole1.png";
+import highMast2 from "@/assets/High Mast Pole/High Mast Pole2.png";
+import highMast3 from "@/assets/High Mast Pole/High Mast Pole3.png";
+import highMast4 from "@/assets/High Mast Pole/High Mast Pole4.png";
+import tubular1 from "@/assets/Tubular Pole/Tubular Poles1.png";
+import tubular2 from "@/assets/Tubular Pole/Tubular Poles2.png";
+import tubular3 from "@/assets/Tubular Pole/Tubular Poles3.png";
+import tubular4 from "@/assets/Tubular Pole/Tubular Poles4.png";
+import tubular5 from "@/assets/Tubular Pole/Tubular Poles5.png";
+import decorative1 from "@/assets/Decorative Pole/Decorative Lighting Pole1.png";
+import decorative2 from "@/assets/Decorative Pole/Decorative Lighting Pole2.png";
+import decorative3 from "@/assets/Decorative Pole/Decorative Lighting Pole3.png";
+import decorative4 from "@/assets/Decorative Pole/Decorative Lighting Pole4.png";
+import street1 from "@/assets/Street Light Pole/Street Light Pole1.png";
+import street2 from "@/assets/Street Light Pole/Street Light Pole2.png";
+import street3 from "@/assets/Street Light Pole/Street Light Pole3.png";
+import street4 from "@/assets/Street Light Pole/Street Light Pole4.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -21,6 +38,10 @@ const ProductDetail = () => {
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
   const galleryMap: Record<string, string[]> = {
     "octagonal-pole": [oct1, oct2, oct3, oct4],
+    "high-mast-pole": [highMast1, highMast2, highMast3, highMast4],
+    "tubular-pole": [tubular1, tubular2, tubular3, tubular4, tubular5],
+    "decorative-pole": [decorative1, decorative2, decorative3, decorative4],
+    "street-light-pole": [street1, street2, street3, street4],
   };
   const galleryImages = galleryMap[product?.slug ?? ""] ?? (product ? [product.image] : []);
 
@@ -45,7 +66,7 @@ const ProductDetail = () => {
     <>
       <section className="pt-28 md:pt-32 pb-6 bg-background">
         <div className="container-custom px-4 md:px-8">
-          <nav className="text-sm text-muted-foreground font-body">
+          <nav className="text-sm text-muted-foreground font-body mt-16">
             <Link to="/" className="hover:text-primary">Home</Link> / <Link to="/products" className="hover:text-primary">Products</Link> / <span className="text-foreground">{product.name}</span>
           </nav>
         </div>
@@ -57,10 +78,10 @@ const ProductDetail = () => {
             {/* Image Carousel */}
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="h-full">
               <Carousel opts={{ loop: true }} className="w-full h-full">
-                <CarouselContent className="ml-0">
+                <CarouselContent className="ml-0 h-full">
                   {galleryImages.map((img, index) => (
-                    <CarouselItem key={`${product.slug}-img-${index}`} className="pl-0">
-                      <div className="rounded-2xl overflow-hidden shadow-elevated h-full min-h-[340px] md:min-h-[460px]">
+                    <CarouselItem key={`${product.slug}-img-${index}`} className="pl-0 h-full">
+                      <div className="rounded-2xl overflow-hidden shadow-elevated h-full min-h-[340px] md:min-h-[460px] lg:min-h-full">
                         <img src={img} alt={`${product.name} ${index + 1}`} className="w-full h-full object-cover" />
                       </div>
                     </CarouselItem>

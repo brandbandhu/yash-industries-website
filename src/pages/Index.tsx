@@ -78,7 +78,7 @@ const heroSlides = [
 ];
 
 const HeroSection = () => (
-  <section className="relative w-full overflow-hidden">
+  <section className="relative w-full overflow-hidden pt-24 md:pt-6">
     <Carousel opts={{ loop: true }} className="w-full">
       <CarouselContent className="ml-0">
         {heroSlides.map((slide) => (

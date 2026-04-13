@@ -19,13 +19,13 @@ const strengths = [
 const About = () => (
   <>
     {/* Hero */}
-    <section className="relative py-32 md:py-40 overflow-hidden">
+    <section className="relative pt-48 pb-32 md:pt-32 md:pb-40 overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroBg} alt="About Yash Industries" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/50" />
       </div>
-      <div className="relative container-custom px-4 md:px-8">
-        <nav className="text-sm text-primary-foreground/60 mb-4 font-body">
+      <div className="relative container-custom px-4 md:px-8 pt-6">
+        <nav className="text-sm text-primary-foreground/60 mb-4 mt-16 font-body">
           <Link to="/" className="hover:text-primary-foreground">Home</Link> / <span className="text-primary-foreground">About Us</span>
         </nav>
         <h1 className="text-4xl md:text-5xl font-heading font-black text-primary-foreground">About Us</h1>
@@ -42,11 +42,11 @@ const About = () => (
             <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-4xl font-heading font-black text-primary mb-6">
               A Decade of Lighting Infrastructure Excellence
             </motion.h2>
-            <motion.p variants={fadeUp} custom={1} className="text-muted-foreground leading-relaxed mb-4">
+            <motion.p variants={fadeUp} custom={1} className="text-muted-foreground leading-relaxed mb-4 text-justify">
               With a decade of expertise, we are a leading manufacturer of high-quality street light poles engineered for durability and strength.
               Over the last 10 years, we have mastered the art of crafting robust infrastructure that powers cities and highways.
             </motion.p>
-            <motion.p variants={fadeUp} custom={2} className="text-muted-foreground leading-relaxed mb-6">
+            <motion.p variants={fadeUp} custom={2} className="text-muted-foreground leading-relaxed mb-6 text-justify">
               From standard Octagonal and Tubular poles to custom Decorative designs, our products are built to meet international standards.
               Our commitment to precision welding, superior galvanization, and on-time delivery has made us a trusted partner in the lighting industry.
             </motion.p>

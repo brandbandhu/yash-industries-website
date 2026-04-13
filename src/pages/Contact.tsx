@@ -21,13 +21,13 @@ const Contact = () => {
 
   return (
     <>
-      <section className="relative py-32 md:py-40 overflow-hidden">
+      <section className="relative pt-48 pb-32 md:pt-32 md:pb-40 overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroBg} alt="Contact" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        <div className="relative container-custom px-4 md:px-8">
-          <nav className="text-sm text-primary-foreground/60 mb-4 font-body">
+        <div className="relative container-custom px-4 md:px-8 pt-6">
+          <nav className="text-sm text-primary-foreground/60 mb-4 mt-16 font-body">
             <Link to="/" className="hover:text-primary-foreground">Home</Link> / <span className="text-primary-foreground">Contact</span>
           </nav>
           <h1 className="text-4xl md:text-5xl font-heading font-black text-primary-foreground">Contact Us</h1>
@@ -84,7 +84,13 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-primary text-sm">Address</h3>
-                    <p className="text-sm text-muted-foreground">Industrial Area, Phase II, New Delhi, India - 110020</p>
+                    <p className="text-sm text-muted-foreground">
+                      <span className="font-semibold text-primary">Reg. Office :</span>{" "}
+                      Renukai Niwas, Near Natyagraha, Canol Road Beed
+                      <br />
+                      <span className="font-semibold text-primary">Factory :</span>{" "}
+                      Plot No. 08, Survey No. 73, Charhata Road, Palwan, Tq. & Dist. Beed 0 431 122
+                    </p>
                   </div>
                 </motion.div>
                 <motion.div variants={fadeUp} custom={2} className="flex items-start gap-4">
@@ -93,10 +99,11 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-primary text-sm">Phone</h3>
-                                        <div className="flex flex-col gap-1">
+                    <div className="flex flex-col gap-1">
                       <a href="tel:+919673064141" className="text-sm text-muted-foreground hover:text-secondary">+91 96730 64141</a>
                       <a href="tel:+919559434141" className="text-sm text-muted-foreground hover:text-secondary">+91 95594 34141</a>
                       <a href="tel:+919049874141" className="text-sm text-muted-foreground hover:text-secondary">+91 90498 74141</a>
+                      <a href="tel:+919768414141" className="text-sm text-muted-foreground hover:text-secondary">+91 97684 14141</a>
                     </div>
                   </div>
                 </motion.div>

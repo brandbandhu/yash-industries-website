@@ -37,13 +37,13 @@ const Products = () => {
 
   return (
     <>
-      <section className="relative py-32 md:py-40 overflow-hidden">
+      <section className="relative pt-48 pb-32 md:pt-32 md:pb-40 overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroBg} alt="Products" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        <div className="relative container-custom px-4 md:px-8">
-          <nav className="text-sm text-primary-foreground/60 mb-4 font-body">
+        <div className="relative container-custom px-4 md:px-8 pt-6">
+          <nav className="text-sm text-primary-foreground/60 mb-4 mt-16 font-body">
             <Link to="/" className="hover:text-primary-foreground">Home</Link> / <span className="text-primary-foreground">Products</span>
           </nav>
           <h1 className="text-4xl md:text-5xl font-heading font-black text-primary-foreground">Our Products</h1>
