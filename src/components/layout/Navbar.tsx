@@ -1,6 +1,6 @@
 ﻿import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Mail, Facebook, Instagram, Linkedin, BadgeCheck, Globe2 } from "lucide-react";
+import { Menu, X, Phone, Mail, Facebook, Instagram, Linkedin, Twitter, BadgeCheck, Globe2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 import logoImg from "@/assets/logo .png";
@@ -96,6 +96,15 @@ const Navbar = () => {
               rel="noopener noreferrer"
             >
               <Instagram className="w-4 h-4" />
+            </a>
+            <a
+              href="https://x.com/YashIndustries9"
+              aria-label="Twitter"
+              className="hover:opacity-80 transition-opacity"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Twitter className="w-4 h-4" />
             </a>
             <a href="#" aria-label="LinkedIn" className="hover:opacity-80 transition-opacity">
               <Linkedin className="w-4 h-4" />
