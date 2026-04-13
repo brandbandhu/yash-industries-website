@@ -55,7 +55,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/vikas-tulshiram-tandale-53a999367/"
                 aria-label="LinkedIn"
                 className="hover:opacity-80 transition-opacity"
                 target="_blank"

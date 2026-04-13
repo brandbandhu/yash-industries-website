@@ -106,7 +106,13 @@ const Navbar = () => {
             >
               <Twitter className="w-4 h-4" />
             </a>
-            <a href="#" aria-label="LinkedIn" className="hover:opacity-80 transition-opacity">
+            <a
+              href="https://www.linkedin.com/in/vikas-tulshiram-tandale-53a999367/"
+              aria-label="LinkedIn"
+              className="hover:opacity-80 transition-opacity"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Linkedin className="w-4 h-4" />
             </a>
           </div>
