@@ -79,10 +79,22 @@ const Navbar = () => {
             </a>
           </div>
           <div className="flex items-center gap-3 md:ml-auto">
-            <a href="#" aria-label="Facebook" className="hover:opacity-80 transition-opacity">
+            <a
+              href="https://www.facebook.com/share/1aAsQiH5pe/"
+              aria-label="Facebook"
+              className="hover:opacity-80 transition-opacity"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Facebook className="w-4 h-4" />
             </a>
-            <a href="#" aria-label="Instagram" className="hover:opacity-80 transition-opacity">
+            <a
+              href="https://www.instagram.com/yashindustriesbeed?igsh=MW5hbHd2dmJpZXh4Mw=="
+              aria-label="Instagram"
+              className="hover:opacity-80 transition-opacity"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Instagram className="w-4 h-4" />
             </a>
             <a href="#" aria-label="LinkedIn" className="hover:opacity-80 transition-opacity">
@@ -109,7 +121,7 @@ const Navbar = () => {
             </div>
             <div className="font-body text-[12px] md:text-sm text-foreground">
               <p className="font-semibold">Address</p>
-              <p className="text-muted-foreground">Renukai Niwas, Near Natyagraha, Canol Road Beed</p>
+              <p className="text-muted-foreground">Shop No.02, Sai Residency Near Natyagruh Canal Road Beed 431122</p>
             </div>
           </div>
         </div>

@@ -85,11 +85,11 @@ const Contact = () => {
                   <div>
                     <h3 className="font-heading font-bold text-primary text-sm">Address</h3>
                     <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold text-primary">Reg. Office :</span>{" "}
-                      Renukai Niwas, Near Natyagraha, Canol Road Beed
+                      <span className="font-semibold text-primary">Office :</span>{" "}
+                      Shop No.02, Sai Residency Near Natyagruh Canal Road Beed 431122
                       <br />
-                      <span className="font-semibold text-primary">Factory :</span>{" "}
-                      Plot No. 08, Survey No. 73, Charhata Road, Palwan, Tq. & Dist. Beed 0 431 122
+                      <span className="font-semibold text-primary">Plant/Company add:-</span>{" "}
+                      Survey No. 73, Charhata Road, Palwan, Tq. and Dist. Beed .431122
                     </p>
                   </div>
                 </motion.div>

@@ -55,11 +55,11 @@ const Footer = () => {
               <li className="flex items-start gap-3 text-sm opacity-80">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
                 <span>
-                  <span className="font-semibold text-primary-foreground">Reg. Office :</span>{" "}
-                  Renukai Niwas, Near Natyagraha, Canol Road Beed
+                  <span className="font-semibold text-primary-foreground">Office :</span>{" "}
+                  Shop No.02, Sai Residency Near Natyagruh Canal Road Beed 431122
                   <br />
-                  <span className="font-semibold text-primary-foreground">Factory :</span>{" "}
-                  Plot No. 08, Survey No. 73, Charhata Road, Palwan, Tq. & Dist. Beed 0 431 122
+                  <span className="font-semibold text-primary-foreground">Plant/Company add:-</span>{" "}
+                  Survey No. 73, Charhata Road, Palwan, Tq. and Dist. Beed .431122
                 </span>
               </li>
               <li className="flex items-center gap-3 text-sm opacity-80">

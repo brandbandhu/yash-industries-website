@@ -23,6 +23,10 @@ import appIndustrialAreas from "@/assets/Where Our Poles Shine/Industrial Areas.
 import appResidentialProjects from "@/assets/Where Our Poles Shine/Residential Projects.png";
 import appSmartCityProjects from "@/assets/Where Our Poles Shine/Smart City Projects.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import logoIndiaMart from "@/assets/Company Logos/indiamart.png";
+import logoJustdial from "@/assets/Company Logos/Justdial.png";
+import logoExportersIndia from "@/assets/Company Logos/Exporters India.png";
+import logoTradeIndia from "@/assets/Company Logos/Trade India.png";
 
 const openEnquiryModal = () => {
   window.dispatchEvent(new Event("open-enquiry-modal"));
@@ -294,6 +298,46 @@ const ManufacturingProcess = () => (
   </section>
 );
 
+const ProfilePresence = () => (
+  <section className="section-padding bg-background">
+    <div className="container-custom">
+      <div className="text-center mb-10">
+        <p className="text-secondary font-heading font-semibold text-sm tracking-widest uppercase mb-2">
+          Our Digital Presence
+        </p>
+        <h2 className="text-3xl md:text-4xl font-heading font-black text-primary">
+          Verified Listings on Leading Platforms
+        </h2>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center max-w-5xl mx-auto">
+        {[
+          { label: "IndiaMART", logo: logoIndiaMart },
+          { label: "Justdial", logo: logoJustdial },
+          { label: "Exporters India", logo: logoExportersIndia },
+          { label: "Trade India", logo: logoTradeIndia },
+        ].map((item) => (
+          <div
+            key={item.label}
+            className="glass-card rounded-2xl p-4 flex items-center justify-center min-h-[120px] border border-border/60 w-full"
+          >
+            <div className="text-center">
+              <div className="h-16 w-full bg-white rounded-lg flex items-center justify-center p-2">
+                <img
+                  src={item.logo}
+                  alt={item.label}
+                  className="h-full w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <p className="mt-3 text-sm font-heading font-semibold text-primary">{item.label}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 const applicationData = [
   { image: appHighways, label: "Highways" },
   { image: appStreetLighting, label: "Street Lighting" },
@@ -363,6 +407,7 @@ const Index = () => (
     <AboutPreview />
     <WhyChooseUs />
     <ManufacturingProcess />
+    <ProfilePresence />
     <Applications />
     <CTASection />
   </>
