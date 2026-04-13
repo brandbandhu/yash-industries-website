@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 import logoImg from "@/assets/logo .png";
 
@@ -58,18 +58,22 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-sm opacity-80">
                 <Phone className="w-4 h-4 shrink-0" />
-                <a href="tel:+919999999999" className="hover:opacity-100">+91 99999 99999</a>
+                <div className="flex flex-col">
+                  <a href="tel:+919673064141" className="hover:opacity-100">+91 96730 64141</a>
+                  <a href="tel:+919559434141" className="hover:opacity-100">+91 95594 34141</a>
+                  <a href="tel:+919049874141" className="hover:opacity-100">+91 90498 74141</a>
+                </div>
               </li>
               <li className="flex items-center gap-3 text-sm opacity-80">
                 <Mail className="w-4 h-4 shrink-0" />
-                <a href="mailto:info@yashindustries.com" className="hover:opacity-100">info@yashindustries.com</a>
+                <a href="mailto:yashindustriesbeed@gmail.com" className="hover:opacity-100">yashindustriesbeed@gmail.com</a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/20 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm opacity-60">Copyright �2026 All Rights Reserved By Yash Industries Designed By Webakoof</p>
+          <p className="text-sm opacity-60">Copyright © 2026 All Rights Reserved By Yash Industries Designed By Webakoof</p>
         </div>
       </div>
     </footer>

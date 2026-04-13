@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
@@ -52,10 +52,13 @@ const Contact = () => {
                 />
                 <input
                   type="tel"
+                  inputMode="numeric"
+                  maxLength={10}
+                  pattern="[0-9]{10}"
                   placeholder="Phone Number"
                   required
                   value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value.replace(/\\D/g, "").slice(0, 10) })}
                   className="w-full px-4 py-3 rounded-lg border border-border bg-background font-body text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
                 />
                 <textarea
@@ -90,7 +93,11 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-primary text-sm">Phone</h3>
-                    <a href="tel:+919999999999" className="text-sm text-muted-foreground hover:text-secondary">+91 99999 99999</a>
+                                        <div className="flex flex-col gap-1">
+                      <a href="tel:+919673064141" className="text-sm text-muted-foreground hover:text-secondary">+91 96730 64141</a>
+                      <a href="tel:+919559434141" className="text-sm text-muted-foreground hover:text-secondary">+91 95594 34141</a>
+                      <a href="tel:+919049874141" className="text-sm text-muted-foreground hover:text-secondary">+91 90498 74141</a>
+                    </div>
                   </div>
                 </motion.div>
                 <motion.div variants={fadeUp} custom={3} className="flex items-start gap-4">
@@ -99,7 +106,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-primary text-sm">Email</h3>
-                    <a href="mailto:info@yashindustries.com" className="text-sm text-muted-foreground hover:text-secondary">info@yashindustries.com</a>
+                    <a href="mailto:yashindustriesbeed@gmail.com" className="text-sm text-muted-foreground hover:text-secondary">yashindustriesbeed@gmail.com</a>
                   </div>
                 </motion.div>
                 <motion.div variants={fadeUp} custom={4} className="flex items-start gap-4">
@@ -108,7 +115,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-primary text-sm">WhatsApp</h3>
-                    <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-secondary">Chat with us on WhatsApp</a>
+                    <a href="https://wa.me/919673064141" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-secondary">Chat with us on WhatsApp</a>
                   </div>
                 </motion.div>
               </div>

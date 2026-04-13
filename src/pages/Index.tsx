@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Shield, Zap, Clock, Wrench, Factory, CheckCircle, ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -24,6 +24,10 @@ import appResidentialProjects from "@/assets/Where Our Poles Shine/Residential P
 import appSmartCityProjects from "@/assets/Where Our Poles Shine/Smart City Projects.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
+const openEnquiryModal = () => {
+  window.dispatchEvent(new Event("open-enquiry-modal"));
+};
+
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.5 } }),
@@ -40,7 +44,7 @@ const heroSlides = [
     highlight: "Lighting Poles",
     description: "Durable. Strong. Engineered for Performance.",
     ctaPrimary: { label: "View Products", to: "/products" },
-    ctaSecondary: { label: "Request Quote", to: "/contact" },
+    ctaSecondary: { label: "Enquire Now", to: "/contact" },
     stats: ["10+ Years Experience", "Custom Manufacturing", "High Strength Steel"],
   },
   {
@@ -117,9 +121,19 @@ const HeroSection = () => (
                     <Link to={slide.ctaPrimary.to} className="gradient-accent text-secondary-foreground font-heading font-bold px-8 py-3.5 rounded-lg hover:opacity-90 transition-opacity text-sm">
                       {slide.ctaPrimary.label}
                     </Link>
-                    <Link to={slide.ctaSecondary.to} className="border-2 border-white/40 text-white font-heading font-bold px-8 py-3.5 rounded-lg hover:bg-white/10 transition-colors text-sm">
-                      {slide.ctaSecondary.label}
-                    </Link>
+                    {slide.ctaSecondary.label === "Enquire Now" ? (
+                      <button
+                        type="button"
+                        onClick={openEnquiryModal}
+                        className="border-2 border-white/40 text-white font-heading font-bold px-8 py-3.5 rounded-lg hover:bg-white/10 transition-colors text-sm"
+                      >
+                        {slide.ctaSecondary.label}
+                      </button>
+                    ) : (
+                      <Link to={slide.ctaSecondary.to} className="border-2 border-white/40 text-white font-heading font-bold px-8 py-3.5 rounded-lg hover:bg-white/10 transition-colors text-sm">
+                        {slide.ctaSecondary.label}
+                      </Link>
+                    )}
                   </motion.div>
                   <motion.div
                     variants={fadeUp}
