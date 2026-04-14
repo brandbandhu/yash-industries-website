@@ -98,11 +98,14 @@ const Contact = () => {
                     <Phone className="w-5 h-5 text-secondary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-heading font-bold text-primary text-sm">Phone</h3>
+                    <h3 className="font-heading font-bold text-[#0B2A4A] text-sm">Phone</h3>
                     <div className="flex flex-col gap-1">
                       <a href="tel:+919673064141" className="text-sm text-muted-foreground hover:text-secondary">+91 96730 64141</a>
                       <a href="tel:+919559434141" className="text-sm text-muted-foreground hover:text-secondary">+91 95594 34141</a>
                       <a href="tel:+919049874141" className="text-sm text-muted-foreground hover:text-secondary">+91 90498 74141</a>
+                    </div>
+                    <div className="mt-3">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-[#0B2A4A]">CEO Contact No.</p>
                       <a href="tel:+919768414141" className="text-sm text-muted-foreground hover:text-secondary">+91 97684 14141</a>
                     </div>
                   </div>
@@ -128,17 +131,27 @@ const Contact = () => {
               </div>
 
               {/* Map */}
-              <motion.div variants={fadeUp} custom={5} className="rounded-xl overflow-hidden shadow-card h-64">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.06889754725782!3d28.52758200617607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc03f!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Location Map"
-                />
+              <motion.div variants={fadeUp} custom={5} className="space-y-3">
+                <a
+                  href="https://maps.app.goo.gl/rGvUny9DbVssZMDS6?g_st=awb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-secondary/80"
+                >
+                  Open Company Location on Google Maps
+                </a>
+                <div className="rounded-xl overflow-hidden shadow-card h-64">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.8548503436255!2d75.7226937!3d18.9820167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc52bd336dad891%3A0xe40ded7e519b7dc0!2sYash%20industries!5e0!3m2!1sen!2sin!4v1776151446251!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Location Map"
+                  />
+                </div>
               </motion.div>
             </motion.div>
           </div>
