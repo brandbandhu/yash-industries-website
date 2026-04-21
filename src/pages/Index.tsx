@@ -10,13 +10,6 @@ import bannerMobile2 from "@/assets/mobile banner/banner 2.png";
 import bannerMobile3 from "@/assets/mobile banner/banner 3.png";
 import manufacturingImg from "@/assets/about us.png";
 import productHighmast from "@/assets/product-highmast.jpg";
-import { products } from "@/data/products";
-import homeOctagonal from "@/assets/home products/octagonal pole.png";
-import homeTubular from "@/assets/home products/Tubular Pole.png";
-import homeConical from "@/assets/home products/Conical Pole.png";
-import homeDecorative from "@/assets/home products/Decorative light Pole.png";
-import homeHighmast from "@/assets/home products/High Mast Pole.png";
-import homeStreetlight from "@/assets/home products/Street Light Pole.png";
 import appHighways from "@/assets/Where Our Poles Shine/Highways.png";
 import appStreetLighting from "@/assets/Where Our Poles Shine/Street Lighting.png";
 import appIndustrialAreas from "@/assets/Where Our Poles Shine/Industrial Areas.png";
@@ -27,6 +20,8 @@ import logoIndiaMart from "@/assets/Company Logos/indiamart.png";
 import logoJustdial from "@/assets/Company Logos/Justdial.png";
 import logoExportersIndia from "@/assets/Company Logos/Exporters India.png";
 import logoTradeIndia from "@/assets/Company Logos/Trade India.png";
+import { useProducts } from "@/hooks/useProducts";
+import { resolveProductCardImage } from "@/data/legacyMedia";
 
 const openEnquiryModal = () => {
   window.dispatchEvent(new Event("open-enquiry-modal"));
@@ -163,19 +158,11 @@ const HeroSection = () => (
   </section>
 );
 
-const homeProductImages: Record<string, string> = {
-  "Octagonal Pole": homeOctagonal,
-  "Tubular Pole": homeTubular,
-  "Conical Pole": homeConical,
-  "Decorative Pole": homeDecorative,
-  "High Mast Pole": homeHighmast,
-  "Street Light Pole": homeStreetlight,
-};
-
 const ProductCategories = () => {
+  const { data: products = [] } = useProducts();
   const homeProducts = products.map((product) => ({
     ...product,
-    image: homeProductImages[product.name] ?? product.image,
+    image: resolveProductCardImage(product.slug, product.image),
   }));
 
   return (

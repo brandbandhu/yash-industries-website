@@ -1,27 +1,5 @@
-import octagonalImg from "@/assets/product-octagonal.jpg";
-import tubularImg from "@/assets/product-tubular.jpg";
-import conicalImg from "@/assets/product-conical.jpg";
-import decorativeImg from "@/assets/product-decorative.jpg";
-import highmastImg from "@/assets/product-highmast.jpg";
-import streetlightImg from "@/assets/product-streetlight.jpg";
-
-export interface Product {
-  id: string;
-  name: string;
-  slug: string;
-  shortDescription: string;
-  description: string;
-  image: string;
-  category: string;
-  material: string;
-  height: string;
-  shape: string;
-  finish: string;
-  applications: string[];
-  customization: string[];
-  moq: string;
-  specifications: Record<string, string>;
-}
+import type { Product } from "@/types/product";
+import { resolveLegacyImage } from "@/data/legacyMedia";
 
 export const products: Product[] = [
   {
@@ -30,7 +8,7 @@ export const products: Product[] = [
     slug: "octagonal-pole",
     shortDescription: "High-strength octagonal steel poles for highways and urban roads.",
     description: "Our Octagonal Poles are engineered with eight-sided cross-sections for superior structural integrity and wind resistance. Made from high-grade mild steel, these poles are ideal for highway lighting, urban street lighting, and industrial areas. Each pole undergoes precision fabrication and hot-dip galvanization for maximum corrosion resistance.",
-    image: octagonalImg,
+    image: resolveLegacyImage("legacy-cover:octagonal-pole"),
     category: "Street Light Poles",
     material: "Mild Steel / High Tensile Steel",
     height: "4m to 12m",
@@ -39,6 +17,12 @@ export const products: Product[] = [
     applications: ["Highways", "Urban Roads", "Industrial Areas", "Parking Lots"],
     customization: ["Custom heights", "Arm configurations", "Base plate designs", "Color coating"],
     moq: "50 Units",
+    galleryImages: [
+      resolveLegacyImage("legacy-gallery:octagonal-pole:1"),
+      resolveLegacyImage("legacy-gallery:octagonal-pole:2"),
+      resolveLegacyImage("legacy-gallery:octagonal-pole:3"),
+      resolveLegacyImage("legacy-gallery:octagonal-pole:4"),
+    ],
     specifications: {
       "Wall Thickness": "3mm to 6mm",
       "Top Diameter": "60mm to 75mm",
@@ -53,7 +37,7 @@ export const products: Product[] = [
     slug: "tubular-pole",
     shortDescription: "Round cross-section poles for versatile urban and residential lighting.",
     description: "Tubular Poles feature a classic round cross-section design that offers excellent strength-to-weight ratio. These poles are widely used in residential areas, parks, and urban streets. Manufactured using ERW pipes with precision welding for consistent quality.",
-    image: tubularImg,
+    image: resolveLegacyImage("legacy-cover:tubular-pole"),
     category: "Street Light Poles",
     material: "ERW Steel Pipe",
     height: "3m to 9m",
@@ -62,6 +46,13 @@ export const products: Product[] = [
     applications: ["Residential Areas", "Parks", "Urban Streets", "Campuses"],
     customization: ["Multiple arm options", "Decorative brackets", "Custom colors", "Height variations"],
     moq: "100 Units",
+    galleryImages: [
+      resolveLegacyImage("legacy-gallery:tubular-pole:1"),
+      resolveLegacyImage("legacy-gallery:tubular-pole:2"),
+      resolveLegacyImage("legacy-gallery:tubular-pole:3"),
+      resolveLegacyImage("legacy-gallery:tubular-pole:4"),
+      resolveLegacyImage("legacy-gallery:tubular-pole:5"),
+    ],
     specifications: {
       "Wall Thickness": "2.5mm to 4mm",
       "Outer Diameter": "76mm to 168mm",
@@ -76,7 +67,7 @@ export const products: Product[] = [
     slug: "conical-pole",
     shortDescription: "Tapered design for modern aesthetics and structural efficiency.",
     description: "Conical Poles combine modern aesthetics with structural efficiency through their tapered design. The gradually reducing diameter provides excellent load distribution and elegant appearance. Perfect for smart city projects and modern urban developments.",
-    image: conicalImg,
+    image: resolveLegacyImage("legacy-cover:conical-pole"),
     category: "Street Light Poles",
     material: "High Tensile Steel",
     height: "5m to 14m",
@@ -85,6 +76,7 @@ export const products: Product[] = [
     applications: ["Smart Cities", "Modern Urban Areas", "Highways", "Commercial Districts"],
     customization: ["Single/double arm", "Custom taper ratio", "Base plate options", "Anchor bolt patterns"],
     moq: "50 Units",
+    galleryImages: [resolveLegacyImage("legacy-cover:conical-pole")],
     specifications: {
       "Wall Thickness": "3mm to 5mm",
       "Top Diameter": "60mm to 80mm",
@@ -99,7 +91,7 @@ export const products: Product[] = [
     slug: "decorative-pole",
     shortDescription: "Ornamental designs for parks, gardens, and heritage areas.",
     description: "Our Decorative Poles blend functionality with artistic design. Featuring ornamental elements, these poles enhance the visual appeal of parks, gardens, heritage zones, and upscale residential areas. Available in cast iron and fabricated steel with various traditional and contemporary designs.",
-    image: decorativeImg,
+    image: resolveLegacyImage("legacy-cover:decorative-pole"),
     category: "Decorative Poles",
     material: "Cast Iron / Fabricated Steel",
     height: "3m to 6m",
@@ -108,6 +100,12 @@ export const products: Product[] = [
     applications: ["Parks & Gardens", "Heritage Areas", "Residential Complexes", "Commercial Plazas"],
     customization: ["Design patterns", "Color options", "Lantern styles", "Multiple arm designs"],
     moq: "25 Units",
+    galleryImages: [
+      resolveLegacyImage("legacy-gallery:decorative-pole:1"),
+      resolveLegacyImage("legacy-gallery:decorative-pole:2"),
+      resolveLegacyImage("legacy-gallery:decorative-pole:3"),
+      resolveLegacyImage("legacy-gallery:decorative-pole:4"),
+    ],
     specifications: {
       "Base Material": "Cast Iron Grade FG200",
       "Shaft Material": "MS Fabricated / CI",
@@ -122,7 +120,7 @@ export const products: Product[] = [
     slug: "high-mast-pole",
     shortDescription: "Tall lighting towers for stadiums, airports, and large areas.",
     description: "High Mast Poles are designed for illuminating large areas such as stadiums, airports, ports, and highway interchanges. These poles feature a raising and lowering mechanism for easy maintenance of luminaires. Built to withstand extreme wind loads and environmental conditions.",
-    image: highmastImg,
+    image: resolveLegacyImage("legacy-cover:high-mast-pole"),
     category: "High Mast",
     material: "High Tensile Steel",
     height: "15m to 40m",
@@ -131,6 +129,12 @@ export const products: Product[] = [
     applications: ["Stadiums", "Airports", "Ports & Harbors", "Highway Interchanges"],
     customization: ["Crown options", "Raising/lowering systems", "Number of luminaires", "Foundation design"],
     moq: "10 Units",
+    galleryImages: [
+      resolveLegacyImage("legacy-gallery:high-mast-pole:1"),
+      resolveLegacyImage("legacy-gallery:high-mast-pole:2"),
+      resolveLegacyImage("legacy-gallery:high-mast-pole:3"),
+      resolveLegacyImage("legacy-gallery:high-mast-pole:4"),
+    ],
     specifications: {
       "Wall Thickness": "5mm to 12mm",
       "Sections": "2 to 4 telescopic sections",
@@ -145,7 +149,7 @@ export const products: Product[] = [
     slug: "street-light-pole",
     shortDescription: "Standard street lighting poles for municipal and urban applications.",
     description: "Our standard Street Light Poles are the backbone of urban and municipal lighting infrastructure. Designed for reliability, easy installation, and long service life, these poles are the most widely deployed across Indian cities and towns. Available in swaged and non-swaged variants.",
-    image: streetlightImg,
+    image: resolveLegacyImage("legacy-cover:street-light-pole"),
     category: "Street Light Poles",
     material: "Mild Steel",
     height: "5m to 10m",
@@ -154,6 +158,12 @@ export const products: Product[] = [
     applications: ["Municipal Roads", "Urban Streets", "Village Roads", "Colony Lighting"],
     customization: ["Single/double arm", "Height options", "Base plate size", "Bracket angle"],
     moq: "100 Units",
+    galleryImages: [
+      resolveLegacyImage("legacy-gallery:street-light-pole:1"),
+      resolveLegacyImage("legacy-gallery:street-light-pole:2"),
+      resolveLegacyImage("legacy-gallery:street-light-pole:3"),
+      resolveLegacyImage("legacy-gallery:street-light-pole:4"),
+    ],
     specifications: {
       "Wall Thickness": "3mm to 4mm",
       "Standard Heights": "5m, 6m, 7m, 8m, 9m, 10m",
